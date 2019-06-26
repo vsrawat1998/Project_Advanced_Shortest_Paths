@@ -151,11 +151,11 @@ public:
 };
 
 int main() {
-    int n, m;
-    scanf("%d%d", &n, &m);
-    Adj adj(2, vector<vector<int>>(n));
-    Adj cost(2, vector<vector<int>>(n));
-    for (int i=0; i<m; ++i) {
+    int num_of_vertices, num_of_edges;
+    scanf("%d%d", &num_of_vertices, &num_of_edges);
+    Adj adj(2, vector<vector<int>>(num_of_vertices));
+    Adj cost(2, vector<vector<int>>(num_of_vertices));
+    for (int i=0; i<num_of_edges; ++i) {
         int u, v, c;
         scanf("%d%d%d", &u, &v, &c);
         adj[0][u-1].push_back(v-1);
@@ -164,11 +164,11 @@ int main() {
         cost[1][v-1].push_back(c);
     }
 
-    Bidijkstra bidij(n, adj, cost);
+    Bidijkstra bidij(num_of_vertices, adj, cost);
 
-    int t;
-    scanf("%d", &t);
-    for (int i=0; i<t; ++i) {
+    int num_of_query;
+    scanf("%d", &num_of_query);
+    for (int i=0; i<num_of_query; ++i) {
         int u, v;
         scanf("%d%d", &u, &v);
         printf("%lld\n", bidij.query(u-1, v-1));
