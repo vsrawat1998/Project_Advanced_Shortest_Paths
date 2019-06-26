@@ -1,4 +1,6 @@
-# Project_Bidirectional_Dijkstra
+# Advanced Shortest Paths Project
+
+## 1) Bidirectional Dijkstra
 
 Social networks are live on the connections between people, so friend
 suggestions is one of the most important features of Facebook. One of
